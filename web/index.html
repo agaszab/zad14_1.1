@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Przelicznik miar i wag</title>
+    <link rel="Stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<div class="center">
+<h1>Przelicznik metryczny</h1>
+
+<form method="post" action="/convertM">
+    <input type="number" name="metry" placeholder="tu wpisz ilość metrów"><br>
+    <input type="number" name="centymetry" placeholder="tu wpisz ilość centymetrów"><br>
+    <input type="number" name="milimetry" placeholder="tu wpisz ilość milimetrów"><br>
+    <input type="submit" name="wyślij" class="submit">
+</form>
+<br><br>
+
+<h1>Przelicznik wag</h1>
+<form method="post" action="/convertKg">
+    <input type="text" name="kilogramy" placeholder="tu wpisz ilość kilogramów"><br>
+    <input type="text" name="gramy" placeholder="tu wpisz ilość gramów"><br>
+    <input type="text" name="miligramy" placeholder="tu wpisz ilość miligramów"><br>
+    <input type="submit" name="wyślij" class="submit"><br>
+</form>
+</div>
+</body>
+</html>

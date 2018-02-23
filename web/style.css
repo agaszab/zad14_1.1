@@ -1,0 +1,40 @@
+body {
+    background: #003f44;
+    color: greenyellow;
+    margin: 3%;
+}
+
+h1 {
+    font-family: 'DejaVu Serif', Georgia, "Times New Roman", Times, serif;
+    font-size: large;
+    color: #a3bb02;
+    margin-bottom: 5px;
+    
+}
+
+input {
+    margin: 3px;
+    border:0;
+    border-color: green;
+    background-size: 1px;
+    height: 25px;
+    width: 220px;
+    text-align: center;
+}
+
+.submit {
+    background: green;
+    color: #003c44;
+
+}
+div.center {
+   border: 2px;
+   border-color: dimgray;
+   background-color: darkslategray;
+   width: 400px;
+   margin-top: 3%;
+   align-content: center;
+    padding: 200px;
+    align-items: center;
+
+}
