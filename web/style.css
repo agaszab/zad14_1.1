@@ -2,6 +2,7 @@ body {
     background: #003f44;
     color: greenyellow;
     margin: 3%;
+    alignment: center;
 }
 
 h1 {
@@ -25,15 +26,17 @@ input {
 .submit {
     background: green;
     color: #003c44;
+    font-weight: bold;
 
 }
 div.center {
    border: 2px;
    border-color: dimgray;
    background-color: darkslategray;
-   width: 400px;
+    width: 20%;
    margin-top: 3%;
    align-content: center;
+    alignment: center;
     padding: 200px;
     align-items: center;
 
