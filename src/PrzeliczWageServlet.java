@@ -15,6 +15,7 @@ public  class PrzeliczWageServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         Convert conv=new Convert();
+        PrintWriter writer = response.getWriter();
         response.setCharacterEncoding("UTF-8");
 
         String kilogramy=request.getParameter("kilogramy");
@@ -31,28 +32,26 @@ public  class PrzeliczWageServlet extends HttpServlet {
              g=conv.KgToG(kg);
         }
 
-        if (gramy!=null) {
+        else if (gramy!=null) {
              g=Double.parseDouble(gramy);
              dag=conv.GToDag(g);
              kg=conv.GToKg(g);
         }
 
-        if (dekagramy!=null) {
+        else if (dekagramy!=null) {
              dag=Double.parseDouble(dekagramy);
              g=conv.DagToG(dag);
              kg=conv.DagToKg(dag);
         }
-      odpWagi(response,kg, dag, g);
 
-
-
-
+        if (kilogramy==null && gramy==null && dekagramy==null) writer.println("Nie wypełniłeś żadnego pola.");
+        else  odpWagi(response, writer, kg, dag, g);
 
     }
 
-    public void odpWagi (HttpServletResponse response, double kg, double dag, double g) throws IOException {
+    public void odpWagi (HttpServletResponse response, PrintWriter writer, double kg, double dag, double g) throws IOException {
 
-        PrintWriter writer = response.getWriter();
+
         writer.println("Kilogramy: " + kg);
         writer.println("Dekagramy: " + dag);
         writer.println("Gramy: " + g);
