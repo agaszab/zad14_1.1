@@ -1,41 +1,72 @@
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 public class Convert {
 
-    public String convertKg(double kg) {
-        double g = kg / 1000;
-        double dag = kg / 100;
-        return "Kilogramy: "+kg+" Dekagramy: "+dag+" Gramy: "+g;
+    public double KgToDag (double kg){
+        return  kg / 100;
+    }
+
+    public double KgToG (double kg){
+        return kg / 1000;
+    }
+
+    public double DagToKg (double dag){
+        return  dag * 100;
+    }
+
+    public double DagToG (double dag){
+        return dag / 10;
+    }
+
+    public double GToKg (double g){
+        return  g * 1000;
+    }
+
+    public double GToDag (double g){
+        return g * 10;
     }
 
 
-    public String convertDag(double dag) {
-        double kg = dag * 100;
-        double g = dag / 10;
-        return "Kilogramy: "+kg+" Dekagramy: "+dag+" Gramy: "+g;
+ public double MToCm (double m){
+        return m / 100;
     }
 
-    public String convertG(double g) {
-        double kg = g * 1000;
-        double dag = g * 10;
-        return "Kilogramy: "+kg+" Dekagramy: "+dag+" Gramy: "+g;
+    public double MToMm (double m){
+        return m / 1000;
     }
 
 
-    public  String convertM(double m) {
-        double cm = m / 100;
-        double mm = m / 1000;
-        return "Metry: "+m+" Centymetry: "+cm+" Milimetry: "+mm;
+    public double CmToM (double cm){
+        return cm * 100;
     }
 
-    public  String convertCm(double cm) {
-        double m = cm * 100;
-        double mm = cm / 10;
-        return "Metry: "+m+" Centymetry: "+cm+" Milimetry: "+mm;
+    public double CmToMm (double cm){
+        return cm / 10;
     }
 
-    public  String convertMm(double mm) {
-        double m=mm*1000;
-        double cm=mm*10;
-        return "Metry: "+m+" Centymetry: "+cm+" Milimetry: "+mm;
+    public double MmToM (double mm){
+        return mm*1000;
     }
 
+    public double MmToCm (double mm){
+        return mm*10;
+    }
+
+    public void odpWagi (HttpServletResponse response, double kg, double dag, double g) throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        writer.println("Kilogramy: " + kg);
+        writer.println("Dekagramy: " + dag);
+        writer.println("Gramy: " + g);
+    }
+
+    public void odpWMiary (HttpServletResponse response, double m, double cm, double mm) throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        writer.println("Metry: " + m);
+        writer.println("Centymetry: " + cm);
+        writer.println("Milimetry: " + mm);
+    }
 }

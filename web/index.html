@@ -5,11 +5,12 @@
     <title>Przelicznik miar i wag</title>
     <link rel="Stylesheet" type="text/css" href="style.css" />
 </head>
+
 <body>
 <div class="center">
 <h1>Przelicznik metryczny</h1>
 
-<form method="post" action="PrzeliczServlet">
+<form method="post" action="PrzeliczMiareServlet">
     <input type="number" name="metry" placeholder="tu wpisz ilość metrów"><br>
     <input type="number" name="centymetry" placeholder="tu wpisz ilość centymetrów"><br>
     <input type="number" name="milimetry" placeholder="tu wpisz ilość milimetrów"><br>
@@ -18,10 +19,10 @@
 <br><br>
 
 <h1>Przelicznik wag</h1>
-<form method="post" action="PrzeliczServlet">
+<form method="post" action="PrzeliczWageServlet">
     <input type="text" name="kilogramy" placeholder="tu wpisz ilość kilogramów"><br>
     <input type="text" name="gramy" placeholder="tu wpisz ilość gramów"><br>
-    <input type="text" name="miligramy" placeholder="tu wpisz ilość miligramów"><br>
+    <input type="text" name="dekagramy" placeholder="tu wpisz ilość dekagramów"><br>
     <input type="submit" name="wyślij" class="submit"><br>
 </form>
 </div>
