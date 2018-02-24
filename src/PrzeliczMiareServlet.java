@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet("/PrzeliczMiareServlet")
 
@@ -40,9 +41,16 @@ public class PrzeliczMiareServlet extends HttpServlet {
             cm=conv.MmToCm(mm);
         }
 
-        conv.odpWMiary(response,m, cm, mm);
+        odpMiary(response,m, cm, mm);
 
     }
 
+    public void odpMiary (HttpServletResponse response, double m, double cm, double mm) throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        writer.println("Metry: " + m);
+        writer.println("Centymetry: " + cm);
+        writer.println("Milimetry: " + mm);
+    }
 
 }

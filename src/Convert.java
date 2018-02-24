@@ -54,19 +54,5 @@ public class Convert {
         return mm*10;
     }
 
-    public void odpWagi (HttpServletResponse response, double kg, double dag, double g) throws IOException {
 
-        PrintWriter writer = response.getWriter();
-        writer.println("Kilogramy: " + kg);
-        writer.println("Dekagramy: " + dag);
-        writer.println("Gramy: " + g);
-    }
-
-    public void odpWMiary (HttpServletResponse response, double m, double cm, double mm) throws IOException {
-
-        PrintWriter writer = response.getWriter();
-        writer.println("Metry: " + m);
-        writer.println("Centymetry: " + cm);
-        writer.println("Milimetry: " + mm);
-    }
 }

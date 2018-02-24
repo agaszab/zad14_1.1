@@ -5,6 +5,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Locale;
+import java.util.Scanner;
 
 @WebServlet("/PrzeliczWageServlet")
 
@@ -13,7 +15,6 @@ public  class PrzeliczWageServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         Convert conv=new Convert();
-
         response.setCharacterEncoding("UTF-8");
 
         String kilogramy=request.getParameter("kilogramy");
@@ -41,13 +42,22 @@ public  class PrzeliczWageServlet extends HttpServlet {
              g=conv.DagToG(dag);
              kg=conv.DagToKg(dag);
         }
-      conv.odpWagi(response,kg, dag, g);
+      odpWagi(response,kg, dag, g);
 
 
 
 
 
     }
+
+    public void odpWagi (HttpServletResponse response, double kg, double dag, double g) throws IOException {
+
+        PrintWriter writer = response.getWriter();
+        writer.println("Kilogramy: " + kg);
+        writer.println("Dekagramy: " + dag);
+        writer.println("Gramy: " + g);
+    }
+
 
 
 }
