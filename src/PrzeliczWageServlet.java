@@ -45,7 +45,7 @@ public  class PrzeliczWageServlet extends HttpServlet {
              kg=conv.DagToKg(dag);
         }
 
-        if (kilogramy==null && gramy==null && dekagramy==null) writer.println("Nie wypełniłeś żadnego pola.");
+        if (kilogramy=="" && gramy=="" && dekagramy=="") writer.println("Nie wypełniłeś żadnego pola.");
         else  odpWagi(response, writer, kg, dag, g);
 
     }

@@ -15,7 +15,7 @@ public class PrzeliczMiareServlet extends HttpServlet {
 
         Convert conv=new Convert();
         PrintWriter writer = response.getWriter();
-
+        request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
 
         String metry=request.getParameter("metry");
@@ -44,7 +44,7 @@ public class PrzeliczMiareServlet extends HttpServlet {
             cm=conv.MmToCm(mm);
         }
 
-        if (metry==null && centymetry==null && milimetry==null) writer.println("Nie wypełniłeś żadnego pola.");
+        if (metry=="" && centymetry=="" && milimetry=="") writer.println("Nie wypełniłeś żadnego pola.");
         else odpMiary(response,writer, m, cm, mm);
 
     }
