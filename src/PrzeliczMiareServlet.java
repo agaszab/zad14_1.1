@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.io.Writer;
+
 
 @WebServlet("/PrzeliczMiareServlet")
 
@@ -26,19 +26,19 @@ public class PrzeliczMiareServlet extends HttpServlet {
         double cm=0;
         double mm=0;
 
-        if (metry!=null) {
+        if (metry!=null && metry!="") {
             m=Double.parseDouble(metry);
             cm=conv.MToCm(m);
             mm=conv.MToMm(m);
         }
 
-       else if (centymetry!=null) {
+       else if (centymetry!=null &&  centymetry!="") {
             cm=Double.parseDouble(centymetry);
             m=conv.CmToM(cm);
             mm=conv.CmToMm(cm);
         }
 
-        else if (milimetry!=null) {
+        else if (milimetry!=null &&  milimetry!="") {
             mm=Double.parseDouble(milimetry);
             m=conv.MmToM(mm);
             cm=conv.MmToCm(mm);

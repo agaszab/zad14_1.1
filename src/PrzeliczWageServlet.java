@@ -26,19 +26,20 @@ public  class PrzeliczWageServlet extends HttpServlet {
         double dag=0;
         double g=0;
 
-        if (kilogramy!=null) {
+
+        if (kilogramy!=null && kilogramy!="") {
              kg=Double.parseDouble(kilogramy);
              dag=conv.KgToDag(kg);
              g=conv.KgToG(kg);
         }
 
-        else if (gramy!=null) {
+        else if (gramy!=null && gramy!="") {
              g=Double.parseDouble(gramy);
              dag=conv.GToDag(g);
              kg=conv.GToKg(g);
         }
 
-        else if (dekagramy!=null) {
+        else if (dekagramy!=null && dekagramy!="") {
              dag=Double.parseDouble(dekagramy);
              g=conv.DagToG(dag);
              kg=conv.DagToKg(dag);
