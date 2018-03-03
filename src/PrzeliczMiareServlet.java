@@ -26,19 +26,19 @@ public class PrzeliczMiareServlet extends HttpServlet {
         double cm=0;
         double mm=0;
 
-        if (metry!=null && metry!="") {
+        if ((metry!=null) && (!metry.equals(""))) {
             m=Double.parseDouble(metry);
             cm=conv.MToCm(m);
             mm=conv.MToMm(m);
         }
 
-       else if (centymetry!=null &&  centymetry!="") {
+       else if (centymetry!=null && (!centymetry.equals("")))  {
             cm=Double.parseDouble(centymetry);
             m=conv.CmToM(cm);
             mm=conv.CmToMm(cm);
         }
 
-        else if (milimetry!=null &&  milimetry!="") {
+        else if (milimetry!=null &&  (!milimetry.equals("")))  {
             mm=Double.parseDouble(milimetry);
             m=conv.MmToM(mm);
             cm=conv.MmToCm(mm);
